@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/_8sdp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gothamrounded_medium"
+            android:text="@string/filter_by"
+            android:layout_weight="1"
+            android:textColor="@color/colorFont"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/tv_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gothamrounded_medium"
+            android:text="@string/reset"
+            android:layout_gravity="end"
+            android:padding="@dimen/_8sdp"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="@color/colorBlue"
+            android:textSize="@dimen/_12ssp" />
+    </LinearLayout>
+
+
+   <LinearLayout
+       android:layout_marginTop="@dimen/_8sdp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:gravity="center_vertical">
+       <TextView
+           android:layout_width="@dimen/_80sdp"
+           android:layout_height="wrap_content"
+           android:textSize="@dimen/_10ssp"
+           android:fontFamily="@font/gothamrounded_book"
+           android:text="@string/total_case"/>
+
+       <EditText
+           android:id="@+id/et_total_case_min"
+           android:layout_width="@dimen/_80sdp"
+           android:layout_height="wrap_content"
+           android:textSize="@dimen/_10ssp"
+           android:maxLength="8"
+           android:layout_marginEnd="@dimen/_8sdp"
+           android:imeOptions="actionNext"
+           android:inputType="numberSigned"
+           android:textColor="@color/colorFont"
+           android:textAlignment="center"
+           android:fontFamily="@font/gothamrounded_medium"
+           android:hint="Min"/>
+
+       <EditText
+           android:id="@+id/et_total_case_max"
+           android:layout_width="@dimen/_80sdp"
+           android:layout_height="wrap_content"
+           android:textSize="@dimen/_10ssp"
+           android:maxLength="8"
+           android:imeOptions="actionNext"
+           android:inputType="numberSigned"
+           android:textColor="@color/colorFont"
+           android:textAlignment="center"
+           android:fontFamily="@font/gothamrounded_medium"
+           android:hint="Max"/>
+
+   </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/gothamrounded_book"
+            android:text="@string/recovered"/>
+
+        <EditText
+            android:id="@+id/et_recovered_min"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:maxLength="8"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:imeOptions="actionNext"
+            android:inputType="numberSigned"
+            android:textColor="@color/colorFont"
+            android:textAlignment="center"
+            android:fontFamily="@font/gothamrounded_medium"
+            android:hint="Min"/>
+
+
+        <EditText
+            android:id="@+id/et_recovered_max"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:maxLength="8"
+            android:imeOptions="actionNext"
+            android:inputType="numberSigned"
+            android:textColor="@color/colorFont"
+            android:textAlignment="center"
+            android:fontFamily="@font/gothamrounded_medium"
+            android:hint="Max"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/gothamrounded_book"
+            android:text="@string/death"/>
+
+        <EditText
+            android:id="@+id/et_death_min"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:textSize="@dimen/_10ssp"
+            android:maxLength="8"
+            android:singleLine="true"
+            android:inputType="numberSigned"
+            android:textColor="@color/colorFont"
+            android:textAlignment="center"
+            android:fontFamily="@font/gothamrounded_medium"
+            android:hint="Min"/>
+
+        <EditText
+            android:id="@+id/et_death_max"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:maxLength="8"
+            android:singleLine="true"
+            android:inputType="numberSigned"
+            android:textColor="@color/colorFont"
+            android:textAlignment="center"
+            android:fontFamily="@font/gothamrounded_medium"
+            android:hint="Max"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_apply"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:textSize="@dimen/_10ssp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:paddingStart="@dimen/_8sdp"
+        android:fontFamily="@font/gothamrounded_medium"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorBlue"
+        android:layout_gravity="center_horizontal"
+        android:text="Apply Filter"/>
+
+</LinearLayout>
