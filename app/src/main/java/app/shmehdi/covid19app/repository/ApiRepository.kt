@@ -15,6 +15,7 @@ object ApiRepository : CovidRepository {
 
     const val SOMETHING_WENT_WRONG = -1
     const val UNKNOWN_ERROR = -2
+    const val MAX_LIMIT_REACHED = 429
 
     val apiService = RetrofitClient.apiService
 

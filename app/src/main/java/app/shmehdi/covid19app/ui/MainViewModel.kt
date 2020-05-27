@@ -7,6 +7,8 @@ import androidx.lifecycle.Observer
 import app.shmehdi.covid19app.network.ApiState
 import app.shmehdi.covid19app.network.models.Countries
 import app.shmehdi.covid19app.network.models.Global
+import app.shmehdi.covid19app.repository.ApiRepository
+import app.shmehdi.covid19app.repository.CovidRepository
 import app.shmehdi.covid19app.repository.RepositoryInjector
 import app.shmehdi.covid19app.utils.SortBy
 import java.util.*
@@ -48,7 +50,7 @@ class MainViewModel : ViewModel() {
         this.lifecycleOwner = lifecycleOwner
     }
 
-    fun loadGlobalStats() {
+    private fun loadGlobalStats(repository: CovidRepository = RepositoryInjector.getRepository(RepositoryInjector.Flavour.API)) {
         repository.loadGlobalStats().observe(lifecycleOwner!!, Observer {
             when (it) {
                 is ApiState.Loading -> loading.value = it.loading
@@ -56,7 +58,12 @@ class MainViewModel : ViewModel() {
                     globalLiveData.value = it.result.global
                     countriesLiveData.value = it.result.countries
                 }
-                is ApiState.Error -> error.value = it.errorMsg
+                is ApiState.Error -> {
+                    if (it.errorCode == ApiRepository.MAX_LIMIT_REACHED) {
+                        loadGlobalStats(repository = RepositoryInjector.getRepository(RepositoryInjector.Flavour.DUMMY))
+                    }
+                    else error.value = it.errorMsg
+                }
             }
         })
     }
